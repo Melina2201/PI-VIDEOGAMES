@@ -7,7 +7,8 @@ const {API_KEY} = process.env
 const router = Router();
 
 const createdGame = require("../utils/createdGame")
-const getAllVideogames = require("../utils/getAllVideogames")
+const getAllVideogames = require("../utils/getAllVideogames");
+const findById = require("../utils/findById");
   
   
   
@@ -29,39 +30,17 @@ const getAllVideogames = require("../utils/getAllVideogames")
     }
   })
 
-  //----------------------------------get videogame detail by id------------------------------------------
+  //----------------------------------get videogame by id------------------------------------------
 
 router.get('/:id', async (req, res) =>{
     const {id} = req.params;
+    const source = isNaN(id) ? "bdd" : "api"
     try{
-  if(!id.includes('-')){
-        let allVideogames = await getAllVideogames(); // me trae todo
-    
-        let idGame = await allVideogames.filter(e => e.id === parseInt(id));
-    
-        if(idGame.length > 0){
-            const detalle = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
-            const description = detalle.data.description_raw;
-            idGame[0]['description'] = description;
-            res.status(200).send(idGame)
-        }
-    }else {
-        let gameFound = await Videogame.findByPk(id, {
-            include: [{
-                model: Genre,
-                attributes: ['name'],
-                through : {
-                    attributes: [],
-                }
-            }]
-        })
-        var arreglo = []
-        arreglo.push(gameFound)
-  
-        res.status(200).json(arreglo)
-    }
-    }catch(error){
-        res.status(404).send(error)
+      const result = await findById(id, source)
+      if(result.length == 0) throw Error ("Game not found")
+      return res.status(200).send(result)
+    } catch (error){
+      return res.status(400).json({ error: error.message})
     }
     
   
