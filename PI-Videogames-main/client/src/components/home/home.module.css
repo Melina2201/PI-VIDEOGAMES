@@ -1,0 +1,34 @@
+.containerHome{
+    /* background: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%) fixed; */
+    background-image: url('https://www.xtrafondos.com/wallpapers/resized/retrowave-lineas-montanas-3063.jpg?s=large'); 
+    background-size: cover;
+    /* background: radial-gradient(circle, rgba(126,53,85,1) 0%, rgba(0,0,0,0.9248074229691877) 100%);*/
+    width: 100%;
+    min-height: 100vh;
+}
+
+.containerCards{
+display: flex;
+flex-wrap: wrap;
+width: 70%;
+gap: 1rem;
+justify-content: center;
+padding: 20px 0;
+
+}
+
+
+
+.cardsAndFilters{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: auto;
+
+}
+
+.holi{
+    display: flex;
+}

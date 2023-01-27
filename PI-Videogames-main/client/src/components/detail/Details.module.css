@@ -1,0 +1,152 @@
+.containerPadre{
+    min-height: 100vh;
+    width: 100%;
+    /* background: radial-gradient(circle, rgba(126,53,85,1) 0%, rgba(0,0,0,0.9248074229691877) 100%);*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('https://www.xtrafondos.com/wallpapers/resized/retrowave-lineas-montanas-3063.jpg?s=large');
+    background-size: cover;
+}
+
+.containerButton{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.containerMain{
+    margin: 0 auto;
+    width: 80%;
+    height: 60vh;
+    display: flex;
+}
+
+
+.containerImg{
+    height: auto;
+   width: 50%;
+   background-size: cover;
+   background-position: center;
+}
+
+
+.containerTextDescrip{
+    width: 50%;
+    color: white;
+    /* background-color: #212121;
+    box-shadow: var(--box_shadow_card); */
+    padding: 1rem;
+    overflow: auto;
+    background-color: rgba(37, 34, 40, 0.8);
+    box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+    border-radius: 20px;
+    box-shadow: var(--box_shadow_card);
+}
+
+.containerTextDescrip::-webkit-scrollbar {
+  width: 0.5em;
+}
+ 
+.containerTextDescrip::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.containerTextDescrip::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+
+
+
+
+
+.header{
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1rem;
+}
+
+
+.containerImgDescrep{
+    width: 80%;
+    height: 70vh;
+    display: flex; 
+    /* border: 2px solid green; */
+    flex-wrap: wrap;
+}
+
+
+.containerDescrip{
+    background-color: #212121;
+    box-shadow: var(--box_shadow_card);
+    width: 60%;
+}
+
+
+.descriptionText{
+    margin-top: 1rem;
+    text-justify:distribute
+}
+
+.ratingAndReleased{
+    margin-top: 1rem;    
+    display: flex;
+    justify-content: space-between;
+}
+
+/* From uiverse.io */
+.detailButton {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: #fafafa;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 20px 40px;
+    border-radius: 50px;
+    border: none;
+    background-image: linear-gradient(to right, #6a11cb, #2575fc);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-right: 15px;
+   }
+   
+   .detailButton::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+   }
+   
+   .detailButton:hover {
+    background-position: right center;
+    transform: scale(1.05);
+   }
+   
+   .detailButton:active {
+    background-position: left center;
+    transform: scale(0.95);
+   }
+
+   .tittle{
+    border-bottom: 1px solid white;
+    margin-bottom: 0.5em;
+   }
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

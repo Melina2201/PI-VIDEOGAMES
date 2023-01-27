@@ -1,0 +1,47 @@
+.DivStyled {
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-image: url('https://wallpapercave.com/wp/wp4118594.jpg');
+	background-size: cover;
+	background-position: top;
+}
+
+.Img {
+    height: 300px;
+	width: 400px;
+}
+
+.ButtonStart {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: #fafafa;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 20px 40px;
+    border-radius: 50px;
+    border: none;
+    background-image: linear-gradient(to right, #6a11cb, #2575fc);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-right: 15px;
+}
+.ButtonStart:hover {
+    background-position: right center;
+    transform: scale(1.05);
+}
+.ButtonStart:active {
+    background-position: left center;
+    transform: scale(0.95);
+}
+
+/*
+La fuente se cambió a 'Roboto' que es una fuente más moderna y legible
+El tamaño de la letra se aumentó a 1.2 rem para hacerlo más legible
+Se añadió un efecto de gradiente en el fondo para darle un aspecto más futurista
+Se aumentó el borde redondeado para darle un aspecto más redondeado y moderno
+Se añadió un efecto de transformación en hover y active para darle una sensación más dinámica al botón
+*/

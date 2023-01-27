@@ -1,0 +1,36 @@
+.containerPadre{
+   max-width: 100%;
+}
+.nums{
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   padding: 10px;
+   background-color: rgba(128, 128, 128, 0.5); /* gris con 50% de transparencia */
+   border-radius: 20px;
+   box-shadow: 15px 15px 30px #bebebe,
+            -15px -15px 30px #ffffff;
+}
+
+.button {
+   background: #d901ff;
+   font-family: inherit;
+   padding: 0.1em 1em;
+   font-weight: 900;
+   font-size: 1.2rem;
+   border: 3px solid black;
+   border-radius: 20px;
+   box-shadow: 0.1em 0.1em;
+   transition: .3s ease;
+   opacity: 0.75;
+  }
+   
+   .button:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+   }
+   
+   .button:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+   }

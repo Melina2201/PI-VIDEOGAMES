@@ -4,6 +4,9 @@ const { Videogame, Genre, Platform} = require('../db');
 
 const getAllVideogames = require("../utils/getAllVideogames");
 
+const {API_KEY} = process.env
+
+const axios = require("axios")
 
 
 const findByIdAPI = async (id) => {
@@ -18,8 +21,18 @@ const findByIdBDD = async (id) => {
 }
 
 const findById = async (id, source) => {
-    const result = source == "api" ? await findByIdAPI(id) : await findByIdBDD(id)
-    return result
+    let result;
+    if (source == "api") {
+        result = await findByIdAPI(id);
+        if(result.length > 0){
+            const detalle = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`);
+            const description = detalle.data.description_raw;
+            result[0]['description'] = description;
+        }
+    } else {
+        result = await findByIdBDD(id);
+    }
+    return result;
 }
 
 module.exports = findById

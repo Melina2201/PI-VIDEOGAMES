@@ -1,0 +1,30 @@
+
+.Input {
+  display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 60px;
+    padding: 5px;
+    background-color: rgb(111, 10, 170, 0.8);
+    height: 40px;
+    backdrop-filter: blur(4px) saturate(180%);
+    font-size: 20px;
+}
+
+.img {
+  width: 50px;
+}
+
+.Conteiner{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.Titulo{
+  font-size: 20px;
+  color: aliceblue;
+}
