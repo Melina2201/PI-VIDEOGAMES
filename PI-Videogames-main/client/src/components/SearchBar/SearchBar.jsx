@@ -9,7 +9,6 @@ import s from  './SearchBar.module.css';
 
 
 export default function SearchBar({ setCurrentPage }) {
-
   const history = useHistory()
   
   const dispatch = useDispatch();

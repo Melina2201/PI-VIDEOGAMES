@@ -16,7 +16,7 @@ export default function Filters({ setCurrentPage, setOrden }) {
 
   useEffect(() => {
     dispatch(getAllGenres());
-  }, [dispatch]);
+  }, []);
  
 
   function handleFilterByGenre(e) {
@@ -58,15 +58,25 @@ export default function Filters({ setCurrentPage, setOrden }) {
         <p>Genres:</p>
         <select className={s.options} onChange={(e) => handleFilterByGenre(e)}>
           <option  value="all">All</option>
-          {myGenres?.map((e) => {
-            return (
-              <option key={e.id} value={e.name}>
-                {e.name}
-              </option>
-            );
-          })}
+          {myGenres?.map((element, index) => (
+            <option key={index}>{element}</option>
+          ))}
         </select>
 
+      </div>
+        </div>
+
+      <div className={s.sortingContainer}>
+        
+        <h5 className={s.underline}>Sorting</h5>
+        <div className={s.aligns}>
+          
+        <p>Storage:</p>
+        <select className={s.options} onChange={(e) => handleFilterCreated(e)}>
+          <option value="all">All</option>
+          <option value="lb">Library</option>
+          <option value="db">Created in DB</option>
+        </select>
       </div>
         </div>
 

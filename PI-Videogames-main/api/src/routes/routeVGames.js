@@ -51,8 +51,8 @@ router.get('/:id', async (req, res) =>{
    
   router.post('/', async (req, res)=>{
     try{
-      const {name, description, released, rating, platform, genre} = req.body
-      const newGame = await createdGame(name, description, released, rating, platform, genre)
+      const {name, description, released, rating, platform, genre, image} = req.body
+      const newGame = await createdGame(name, description, released, rating, platform, genre, image)
       res.send(newGame)
     } catch(error){
         res.status(400).send({message: error.message})

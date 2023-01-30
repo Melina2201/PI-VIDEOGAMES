@@ -25,7 +25,7 @@ const NavBar = () => {
     return (
         <div className={s.NavContainer}>
             <div className={s.nameApp}>
-                <Link to={'/home'} >
+                <Link to={'/videogames'} >
                     <h3 id='appVideogames'>MEL`S VIDEOGAMES</h3>
                 </Link>
             </div>
@@ -36,7 +36,7 @@ const NavBar = () => {
             
             <div className={s.NavLinks}>
 
-                <Link to={'/home'}>
+                <Link to={'/videogames'}>
                     <h4 id='home'> HOME </h4>
                 </Link>
 

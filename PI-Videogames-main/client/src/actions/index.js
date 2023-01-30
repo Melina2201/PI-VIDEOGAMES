@@ -14,10 +14,22 @@ export function getAllGames() {
 
 export function getAllGenres() {
     return async function (dispatch) {
-        var json = await axios.get(`http://localhost:3002/genres`);
+        const json = await axios.get(`http://localhost:3002/genres`);
+        const genres = json.data.map(g => g.name)
         return dispatch({
             type: 'GET_ALL_GENRES',
-            payload: json.data
+            payload: genres
+        })
+    }
+}
+
+export function getAllPlatforms() {
+    return async function (dispatch) {
+        const json = await axios.get(`http://localhost:3002/platforms`);
+        const platforms = json.data.map(g => g.name)
+        return dispatch({
+            type: 'GET_ALL_PLATFORMS',
+            payload: platforms
         })
     }
 }
@@ -59,7 +71,7 @@ export function filterByAbc(payload) {
 export function filterCreated(payload) {
     return {
         type: 'FILTER_CREATED',
-        payload
+        payload: payload
     }
 }
 
@@ -71,16 +83,20 @@ export function postGame(payload) {
     }
 }
 
-export function getAllPlatforms(){
-    return async function(dispatch){
-        const json = await axios.get(`http://localhost:3002/platforms`)
-        const platformss = json.data
-        return dispatch({
-            type: 'GET_ALL_PLATFORMS',
-            payload: platformss        
-        })
+export function createGame(game) {
+    return async function (dispatch) {
+      try {
+        const response = await axios.post(`http://localhost:3002/videogames`, game);
+        dispatch({
+          type: 'GAME_CREATED',
+          payload: response.data
+        });
+      } catch(error) {
+        console.error(error);
+      }
     }
-}
+  }  
+
 
 export function getDetail(id){
     return async function(dispatch){

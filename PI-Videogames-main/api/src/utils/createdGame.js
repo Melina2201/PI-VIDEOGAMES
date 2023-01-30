@@ -3,7 +3,7 @@ const axios= require('axios');
 const { Videogame, Genre, Platform} = require('../db')
 
 
-const createdGame = async (name, description, released, rating, platform, genre) => {
+const createdGame = async (name, description, released, rating, platform, genre, image) => {
     const gameExist = await Videogame.findOne({ where: {name} });
     if(gameExist){
       throw new Error(`Game ${name} already exists`)
@@ -13,13 +13,11 @@ const createdGame = async (name, description, released, rating, platform, genre)
       description,
       released,
       rating,
-      platform
+      platform,
+      genre,
+      image
     })
-    const genderInDb = await Genre.findAll({
-      where: {name: genre}
-    }) 
 
-    game.addGenre(genderInDb)
     return "Successfully created game"
   }
 

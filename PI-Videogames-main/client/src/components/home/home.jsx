@@ -42,7 +42,12 @@ export default function Home() {
        <NavBar setCurrentPage={setCurrentPage}/> 
 
     <div className={s.cardsAndFilters}>
-   
+
+   <Paginado
+          gamesPerPage={gamesPerPage}
+          allVideoGames={allGames.length}
+          paginado={paginado}
+        />
       
     <div className={s.holi}>
     {currentGames.length > 0 ? <Filters setCurrentPage={setCurrentPage} setOrden={setOrden} ></Filters> : null}

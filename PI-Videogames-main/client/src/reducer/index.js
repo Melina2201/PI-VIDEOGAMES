@@ -1,3 +1,5 @@
+import { postGame } from "../actions"
+
 const inicialState = {
     allGames: [],
     allMyGenres: [],
@@ -124,7 +126,7 @@ export default function rootReducer(state = inicialState, action) {
         games : sorted
     }
 
-        case 'FILTER_CREATED':
+    case 'FILTER_CREATED':
             const createdFilter =
             action.payload === "db"
               ? state.allGames.filter((e) => e.createDB)
@@ -134,7 +136,7 @@ export default function rootReducer(state = inicialState, action) {
             games: action.payload === "origin" ? state.allGames : createdFilter,
           };
 
-          case 'CLEAR':
+     case 'CLEAR':
             return {
                 ...state,
                 gameDetail : action.payload
@@ -169,6 +171,27 @@ export default function rootReducer(state = inicialState, action) {
                  ...state,
               filteredVideogames: state.allGames,
             };  
+
+            case 'POST_GAME':
+               return{
+                };
+            
+            case 'GAME_CREATED':
+                const newGame = postGame(action.payload);
+                return {
+                ...state,
+                allGames: [...state.allGames, newGame],
+                games: [...state.games, newGame]
+                 
+                };
+
+case 'CREATE_GAME_ERROR':
+    return {
+        ...state,
+        error: action.payload
+    };
+
+
         default:
             return state;
     }
