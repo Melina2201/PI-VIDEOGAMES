@@ -9,7 +9,7 @@ const getInfoDB = require("../utils/getInfoDB")
 const getAllVideogames = async () =>{
     const apiInfo = await getApiInfo();
     const dbInfo = await getInfoDB();
-    const infoTotal = apiInfo.concat(dbInfo);
+    const infoTotal = dbInfo.concat(apiInfo);
     return infoTotal;
   }
 
