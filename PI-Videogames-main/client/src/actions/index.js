@@ -75,28 +75,6 @@ export function filterCreated(payload) {
     }
 }
 
-export function postGame(payload) {
-    return async function () {
-        const createPost = await axios.post(`http://localhost:3002/videogames`, payload);
-        console.log(createPost);
-        return createPost;
-    }
-}
-
-export function createGame(game) {
-    return async function (dispatch) {
-      try {
-        const response = await axios.post(`http://localhost:3002/videogames`, game);
-        dispatch({
-          type: 'GAME_CREATED',
-          payload: response.data
-        });
-      } catch(error) {
-        console.error(error);
-      }
-    }
-  }  
-
 
 export function getDetail(id){
     return async function(dispatch){
@@ -118,13 +96,3 @@ export function clear(){
         payload : []
     }
 }
-
-export const emptyInputFunction = () => ({
-    type: 'EMPTY_INPUT',
-  });
-
-  export const clearFilteredVideogames = () => {
-    return {
-      type: 'CLEAR_FILTEREDVIDEOGAMES',
-    };
-  };

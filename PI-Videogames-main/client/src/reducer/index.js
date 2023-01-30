@@ -1,4 +1,3 @@
-import { postGame } from "../actions"
 
 const inicialState = {
     allGames: [],
@@ -7,16 +6,6 @@ const inicialState = {
     platforms : [],
     gameDetail: [],
     filteredVideogames: [],
-    modal: {
-        emptyInput: false,
-        gameNotFound: false,
-        gameCreated: false,
-        areYouSure: false,
-        editGame: false,
-        deletedGame: false,
-        videogameExists: false,
-        gameNotChanged: false,
-      },
 }
 
 
@@ -37,7 +26,8 @@ export default function rootReducer(state = inicialState, action) {
 
             case   'GET_GAME_BY_SEARCH':
 
-            let nombre = action.payload === '' ? state.allGames : state.allGames.filter(e => e.name.toLowerCase().includes(action.payload.toLowerCase()))
+            let nombre = action.payload === '' ? state.allGames : state.allGames.filter(e => e.name.toLowerCase()
+            .includes(action.payload.toLowerCase()))
 
             return{
                 ...state,
@@ -102,8 +92,7 @@ export default function rootReducer(state = inicialState, action) {
             
 
         case 'FILTER_BY_ABC':
-            let sorted = action.payload === 'asc' ?
-    state.games.sort(( a, b ) => {
+            let sorted = action.payload === 'asc' ? state.games.sort(( a, b ) => {
         if(a.name > b.name) {
             return 1;
         }
@@ -111,8 +100,8 @@ export default function rootReducer(state = inicialState, action) {
             return -1;
         }
         return 0;
-    }) :
-    state.games.sort(( a, b ) => {
+       }) :
+       state.games.sort(( a, b ) => {
         if(a.name > b.name) {
             return -1;
         }
@@ -120,11 +109,11 @@ export default function rootReducer(state = inicialState, action) {
             return 1;
         }
         return 0;
-    })
-    return{
+       })
+       return{
         ...state,
         games : sorted
-    }
+       }
 
     case 'FILTER_CREATED':
             const createdFilter =
@@ -146,51 +135,21 @@ export default function rootReducer(state = inicialState, action) {
             return {
                   ...state,
                   filteredVideogames: [],
-                };
-
-          case 'EMPTY_INPUT':
-            return {
-                  ...state,
-                   modal: {
-                     ...state.modal,
-                     emptyInput: true,
-                  },
-               };    
-
-          case 'GAME_NOT_FOUND':
-            return {
-                 ...state,
-                 modal: {
-                    ...state.modal,
-                    gameNotFound: true,
-                  },
-                };
+                };   
 
           case 'CLEAR_FILTERS':
             return {
                  ...state,
               filteredVideogames: state.allGames,
             };  
-
-            case 'POST_GAME':
-               return{
-                };
             
-            case 'GAME_CREATED':
-                const newGame = postGame(action.payload);
-                return {
-                ...state,
-                allGames: [...state.allGames, newGame],
-                games: [...state.games, newGame]
-                 
-                };
 
-case 'CREATE_GAME_ERROR':
-    return {
-        ...state,
-        error: action.payload
-    };
-
+         case 'CREATE_GAME_ERROR':
+          return {
+              ...state,
+            error: action.payload
+          };
+  
 
         default:
             return state;

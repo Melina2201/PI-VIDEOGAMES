@@ -16,8 +16,14 @@ const findByIdAPI = async (id) => {
 }
 
 const findByIdBDD = async (id) => {
-    const result = await Videogame.findAll({ where: {id}})
-    return result
+    const juegos = await getAllVideogames();
+    if (id) {
+        const detalle = juegos.filter((el) => {
+          return el.id == id;
+        });
+        return detalle
+    }
+    
 }
 
 const findById = async (id, source) => {
