@@ -5,18 +5,18 @@
 <br>
 
 <h2> Tecnologias 🛠️ </h2>
--JavaScript
--React 
--Redux
--Hooks
--Node.Js
--Express
--PostgreSQL / Sequelize
--Css Modules
+*JavaScript
+*React 
+*Redux
+*Hooks
+*Node.Js
+*Express
+*PostgreSQL / Sequelize
+*Css Modules
 <br>
 
 <h2> Indicaciones 🛠️ </h2>
 <p>Para levantar la app: <p>
--Descargar/clonar el repositorio
--Hacer NPM start en la carpeta client
--Listo en el navegador se te abrirá la app!
+*Descargar/clonar el repositorio
+*Hacer NPM start en la carpeta client
+*Listo en el navegador se te abrirá la app!
