@@ -5,18 +5,18 @@
 <br>
 
 <h2> Tecnologias 🛠️ </h2>
-*JavaScript
-*React 
-*Redux
-*Hooks
-*Node.Js
-*Express
-*PostgreSQL / Sequelize
-*Css Modules
+<ul>:heavy_check_mark: JavaScript</ul>
+<ul>:heavy_check_mark: React</ul>
+<ul>:heavy_check_mark: Redux</ul>
+<ul>:heavy_check_mark: Hooks</ul>
+<ul>:heavy_check_mark: Node.Js</ul>
+<ul>:heavy_check_mark: Express</ul>
+<ul>:heavy_check_mark: PostgreSQL / Sequelize</ul>
+<ul>:heavy_check_mark: Css Modules</ul>
 <br>
 
 <h2> Indicaciones 🛠️ </h2>
 <p>Para levantar la app: <p>
-*Descargar/clonar el repositorio
-*Hacer NPM start en la carpeta client
-*Listo en el navegador se te abrirá la app!
+<ul>:pushpin: Descargar/clonar el repositorio</ul>
+<ul>:pushpin: Hacer NPM start en la carpeta client</ul>
+<ul>:pushpin: Listo en el navegador se te abrirá la app!</ul>
